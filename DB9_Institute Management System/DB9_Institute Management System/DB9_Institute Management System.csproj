@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Courses.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -95,10 +96,18 @@
     <Content Include="Sign In.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="StudentCourseFee.aspx" />
+    <Content Include="StudentEnrolledCourses.aspx" />
     <Content Include="StudentViewOfCourses.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Courses.aspx.cs">
+      <DependentUpon>Courses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Courses.aspx.designer.cs">
+      <DependentUpon>Courses.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -130,6 +139,13 @@
     </Compile>
     <Compile Include="StudentCourseFee.aspx.designer.cs">
       <DependentUpon>StudentCourseFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentEnrolledCourses.aspx.cs">
+      <DependentUpon>StudentEnrolledCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentEnrolledCourses.aspx.designer.cs">
+      <DependentUpon>StudentEnrolledCourses.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentViewOfCourses.aspx.cs">
       <DependentUpon>StudentViewOfCourses.aspx</DependentUpon>
