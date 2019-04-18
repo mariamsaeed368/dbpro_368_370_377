@@ -48,7 +48,7 @@
             <div class="form-horizontal">
                 <h2>Available Courses</h2>
                 <hr/>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" Width="1245px">
                 <Columns>
                     <asp:BoundField DataField="CourseName" HeaderText="CourseName"/>
                     <asp:BoundField DataField="CourseDescription" HeaderText="CourseDescription"/>
@@ -63,8 +63,7 @@
                 </Columns>
             </asp:GridView>
                  <style>
-            .mGrid { 
-                    width: 100%; 
+                     .mGrid { 
                     background-color: #fff; 
                     margin: 5px 0 10px 0; 
                     border: solid 1px #525252; 

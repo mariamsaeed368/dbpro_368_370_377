@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddInstructor.aspx" />
     <Content Include="Courses.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
@@ -89,18 +90,28 @@
     <Content Include="Images\sbgimg5.jpg" />
     <Content Include="Images\sbgimg6.jpg" />
     <Content Include="Images\slide.jpg" />
+    <Content Include="InstructorCourse.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-3.2.1.min.js" />
     <Content Include="js\npm.js" />
     <Content Include="Sign In.aspx" />
     <Content Include="SignUp.aspx" />
+    <Content Include="StudentCourse.aspx" />
     <Content Include="StudentCourseFee.aspx" />
     <Content Include="StudentEnrolledCourses.aspx" />
     <Content Include="StudentViewOfCourses.aspx" />
+    <Content Include="AddQuestions.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddInstructor.aspx.cs">
+      <DependentUpon>AddInstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddInstructor.aspx.designer.cs">
+      <DependentUpon>AddInstructor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Courses.aspx.cs">
       <DependentUpon>Courses.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -118,6 +129,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="InstructorCourse.aspx.cs">
+      <DependentUpon>InstructorCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InstructorCourse.aspx.designer.cs">
+      <DependentUpon>InstructorCourse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sign In.aspx.cs">
       <DependentUpon>Sign In.aspx</DependentUpon>
@@ -132,6 +150,13 @@
     </Compile>
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentCourse.aspx.cs">
+      <DependentUpon>StudentCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentCourse.aspx.designer.cs">
+      <DependentUpon>StudentCourse.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentCourseFee.aspx.cs">
       <DependentUpon>StudentCourseFee.aspx</DependentUpon>
@@ -153,6 +178,13 @@
     </Compile>
     <Compile Include="StudentViewOfCourses.aspx.designer.cs">
       <DependentUpon>StudentViewOfCourses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddQuestions.aspx.cs">
+      <DependentUpon>AddQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddQuestions.aspx.designer.cs">
+      <DependentUpon>AddQuestions.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
