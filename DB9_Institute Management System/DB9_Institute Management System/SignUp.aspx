@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="DB9_Institute_Management_System.SignUp" %>
+﻿
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="DB9_Institute_Management_System.SignUp" %>
 
 <!DOCTYPE html>
 
@@ -22,7 +24,6 @@
 </head>
 <body>
           <form id="form1" runat="server">
-            
          <div>
             <div class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
@@ -74,15 +75,14 @@
              <label class="col-xs-11">Email</label>
              <div class="col-xs-11">
                <asp:TextBox ID="tbEmail" runat="server" Class="form-control" placeholder="Email" TextMode="Email"></asp:TextBox>
+               <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Email is required." ControlToValidate="tbPass" ForeColor="Red"></asp:RequiredFieldValidator><asp:RegularExpressionValidator ForeColor="Red" ID="RegularExpressionValidator2" runat="server" ErrorMessage="Please Enter Valid Email Address" ValidationExpression="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" ControlToValidate="tbEmail"></asp:RegularExpressionValidator>
              </div>
              <div class="col-xs-11">
-                <asp:Button ID="btSignup" runat="server" Class="btn btn-success" Text="Sign Up"/>
+                <asp:Button ID="btSignup" runat="server" Class="btn btn-success" Text="Sign Up" OnClick="btSignup_Click"/>
             </div>
              <div class="col-xs-11">
-                <asp:Label ID="lblMsg" runat="server"></asp:Label>
+                <asp:Label ID="lblMsg" runat="server" ForeColor="Red"></asp:Label>
             </div>
-
-
         </div>
                </div>
     </form>

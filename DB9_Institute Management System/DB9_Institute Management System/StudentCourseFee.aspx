@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudentCourseFee.aspx.cs" Inherits="DB9_Institute_Management_System.StudentCourseFee" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudentCourseFee.aspx.cs" Inherits="DB9_Institute_Management_System.StudentCourseFee" %>
 
 <!DOCTYPE html>
 
@@ -38,8 +39,10 @@
                         <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="Default.aspx">Home</a></li>
-                            <li class="active"><a href="Sign In.aspx">Sign In</a></li>
-
+                            <li><a href="Sign In.aspx">Signout</a></li>
+                            <li><a href="Courses.aspx">Courses</a></li>
+                            <li class="active"><a href="StudentCourseFee.aspx">Student Deposit</a></li>
+                            <li><a href="AddInstructor.aspx">Instructor</a></li>
                         </ul>
                             </div>
                     </div>
@@ -52,48 +55,99 @@
                 <h2>Student Deposit Proof</h2>
                 <hr/>
                 <div class="form-group">
-                    <asp:Label ID="PersonID" runat="server" CssClass="col-md-2 control-label" Text="Person ID"></asp:Label>
+                    <asp:Label ID="RegistrationNo" runat="server" CssClass="col-md-2 control-label" Text="RegistrationNo"></asp:Label>
                     <div class="col-md-3">
-                        <asp:DropDownList ID="Student_feeID" CssClass="form-control" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="Register_No" CssClass="form-control" runat="server" DataSourceID="RegistrationNoDataSet" DataTextField="RegistrationNo" DataValueField="RegistrationNo" Width="142px"></asp:DropDownList>
+                        <asp:SqlDataSource ID="RegistrationNoDataSet" runat="server" ConnectionString="<%$ ConnectionStrings:DB9ConnectionString %>" SelectCommand="SELECT [RegistrationNo] FROM [Person] WHERE ([RegistrationNo] IS NOT NULL)"></asp:SqlDataSource>
                 </div>
                 </div>
                  <div class="form-group">
                     <asp:Label ID="CourseID" runat="server" CssClass="col-md-2 control-label" Text="Course ID"></asp:Label>
                     <div class="col-md-3">
-                        <asp:DropDownList ID="Course_ID" CssClass="form-control" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="Course_ID" CssClass="form-control" runat="server" DataSourceID="CourseIDDataSet" DataTextField="CourseID" DataValueField="CourseID" Width="145px"></asp:DropDownList>
+                        <asp:SqlDataSource ID="CourseIDDataSet" runat="server" ConnectionString="<%$ ConnectionStrings:DB9ConnectionString %>" SelectCommand="SELECT [CourseID] FROM [Course]"></asp:SqlDataSource>
                 </div>
                 </div>
                  <div class="form-group">
                     <asp:Label ID="TotalFee" runat="server" CssClass="col-md-2 control-label" Text="Total Fee"></asp:Label>
                     <div class="col-md-3">
-                        <asp:TextBox ID="tbtotalfee" CssClass="form-control" runat="server" placeholder="Total Fee"></asp:TextBox>
+                        <asp:TextBox ID="tbtotalfee" CssClass="form-control" runat="server" placeholder="Total Fee" Width="145px"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
                     <asp:Label ID="Status" runat="server" CssClass="col-md-2 control-label" Text="Status"></asp:Label>
                     <div class="col-md-3">
-                        <asp:DropDownList ID="Status_fee" CssClass="form-control" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="Status_fee" CssClass="form-control" runat="server" Width="143px">
+                            <asp:ListItem>Paid</asp:ListItem>
+                            <asp:ListItem>Unpaid</asp:ListItem>
+                        </asp:DropDownList>
                 </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-2"></div>
                     <div class="col-md-6">
-                        <asp:Button ID="Button1" runat="server" Text="Submit" Class="btn btn-success"/>
+                        <asp:Button ID="btnsubmit" runat="server" Text="Submit" Class="btn btn-success" OnClick="btnsubmit_Click"/>
+                        <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="btn btn-default" style="font-family: Arial"/>  
                     </div>
                 </div>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt">
+                </div>
+                 <table>
+                <tr>
+                    <td colspan="2">
+                        <asp:Label ID="lblSuccessMessage" runat="server" Text="" ForeColor="Green"></asp:Label>
+                      
+                    </td>
+                     
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:Label ID="lblErrormessage" runat="server" Text="" ForeColor="Red"></asp:Label>
+                    </td> 
+                </tr>
+            </table>
+                <hr />
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Enableviewstate="False"  GridLines="None" AllowPaging="True" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowDeleting="GridView1_RowDeleting" OnRowUpdating="GridView1_RowUpdating">
+                <AlternatingRowStyle CssClass="alt"></AlternatingRowStyle>
                 <Columns>
-                    <asp:BoundField DataField="PersonID" HeaderText="PersonID"/>
-                    <asp:BoundField DataField="CourseID" HeaderText="CourseID"/>
-                    <asp:BoundField DataField="TotalFee" HeaderText="TotalFee"/>
-                    <asp:BoundField DataField="Status" HeaderText="Status"/>
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:LinkButton ID="lnkview" runat="server">Edit</asp:LinkButton>
-                            <asp:LinkButton ID="LinkButton1" runat="server">Delete</asp:LinkButton>
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="PersonID">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_PersonID" runat="server" Text='<%#Eval("PersonID") %>'></asp:Label>  
+                    </ItemTemplate>  
+                   </asp:TemplateField>
+                    <asp:TemplateField HeaderText="CourseID">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_CourseID" runat="server" Text='<%#Eval("CourseID") %>'></asp:Label>  
+                    </ItemTemplate>  
+                  </asp:TemplateField>
+                   <asp:TemplateField HeaderText="TotalFee">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_total" runat="server" Text='<%#Eval("TotalFee")%>'></asp:Label>  
+                    </ItemTemplate>  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="txt_total" Text='<%#Eval("TotalFee")%>' runat="server"></asp:TextBox>
+                    </EditItemTemplate>  
+                </asp:TemplateField> 
+               <asp:TemplateField HeaderText="Status">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_status" runat="server" Text='<%#Eval("Status")%>'></asp:Label>  
+                    </ItemTemplate>  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="txt_status" Text='<%#Eval("Status")%>' runat="server"></asp:TextBox>
+                    </EditItemTemplate>  
+                </asp:TemplateField>
+                    <asp:TemplateField HeaderText="RegistratioNo">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_RegistrationNo" runat="server" Text='<%#Eval("RegistrationNo") %>'></asp:Label>  
+                    </ItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="CourseName">  
+                    <ItemTemplate>  
+                        <asp:Label ID="lbl_CourseName" runat="server" Text='<%#Eval("CourseName") %>'></asp:Label>  
+                    </ItemTemplate>   
+                </asp:TemplateField>  
+                    <asp:CommandField HeaderText="Operations" ShowDeleteButton="True" ShowEditButton="True" />
                 </Columns>
+<PagerStyle CssClass="pgr"></PagerStyle>
             </asp:GridView>
                  <style>
             .mGrid { 

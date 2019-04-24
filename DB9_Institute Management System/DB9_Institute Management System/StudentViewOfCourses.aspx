@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudentViewOfCourses.aspx.cs" Inherits="DB9_Institute_Management_System.StudentViewOfCourses" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudentViewOfCourses.aspx.cs" Inherits="DB9_Institute_Management_System.StudentViewOfCourses" %>
 
 <!DOCTYPE html>
 
@@ -30,6 +31,7 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
+
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
@@ -38,7 +40,8 @@
                         <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="Default.aspx">Home</a></li>
-                            <li><a href="Sign Up.aspx">Sign Out</a></li>
+                            <li><a href="Sign In.aspx">Signout</a></li>
+                            <li><a href="StudentEnrolledCourses.aspx">Enrolled Courses</a></li>
                         </ul>
                             </div>
                     </div>
@@ -48,8 +51,11 @@
             <div class="form-horizontal">
                 <h2>Available Courses</h2>
                 <hr/>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" Width="1245px">
+                <asp:Label ID="lblshow" runat="server"></asp:Label>
+                <asp:HiddenField ID="hfPersonID" runat="server" />
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" Width="1108px">
                 <Columns>
+                    <asp:BoundField DataField="CourseID" HeaderText="CourseID"/>
                     <asp:BoundField DataField="CourseName" HeaderText="CourseName"/>
                     <asp:BoundField DataField="CourseDescription" HeaderText="CourseDescription"/>
                     <asp:BoundField DataField="Duration" HeaderText="Duration"/>
@@ -57,7 +63,7 @@
                     <asp:BoundField DataField="Fee" HeaderText="Fee"/>
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:LinkButton ID="lnkenroll" runat="server">Enroll Now!!</asp:LinkButton>
+                            <asp:LinkButton ID="lnkenroll" runat="server" CommandArgument='<%#Eval("CourseID") %>' OnClick="lnk_OnClick">Enroll Now!!</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

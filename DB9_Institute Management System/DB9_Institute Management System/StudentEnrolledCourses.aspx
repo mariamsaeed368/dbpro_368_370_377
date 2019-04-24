@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Sign In</title>
+    <title>Enrolled Courses</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -42,8 +42,8 @@
                         <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="Default.aspx">Home</a></li>
-                            <li class="active"><a href="Sign In.aspx">Sign In</a></li>
-
+                            <li><a href="Sign In.aspx">Signout</a></li>
+                            <li><a href="StudentViewOfCourses.aspx">Available Courses</a></li>
                         </ul>
                             </div>
                     </div>
@@ -51,11 +51,12 @@
              
         </div>
         <!--Courses start-->
-        <div class="container">
+         <div class="container">
+        <div class="form-horizontal">
         <h2>Enrolled Courses</h2>
         <hr />           
-        <div class="center-page">
-             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt">
+        <asp:HiddenField ID="hfPersonID" runat="server" />
+             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" Width="1083px">
                 <Columns>
                     <asp:BoundField DataField="CourseName" HeaderText="CourseName"/>
                     <asp:BoundField DataField="CourseDescription" HeaderText="CourseDescription"/>
@@ -70,10 +71,9 @@
                 </Columns>
             </asp:GridView>
                  <style>
-            .mGrid { 
-                    width: 100%; 
+                     .mGrid { 
                     background-color: #fff; 
-                    margin: 5px 0 10px 0; 
+                    margin: 5px 125 10px 0; 
                     border: solid 1px #525252; 
                     border-collapse:collapse; 
                     }
@@ -105,8 +105,8 @@
         </style>
         </div>
             </div>
-    </form>
      <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-</body>
+    </form>
+     </body>
 </html>

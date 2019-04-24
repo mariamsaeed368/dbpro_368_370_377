@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Courses.aspx.cs" Inherits="DB9_Institute_Management_System.Courses" %>
+﻿
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Courses.aspx.cs" Inherits="DB9_Institute_Management_System.Courses" %>
 
 <!DOCTYPE html>
 
@@ -8,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Sign In</title>
+    <title>Courses</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -42,55 +44,109 @@
                         <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="Default.aspx">Home</a></li>
-                            <li class="active"><a href="Sign In.aspx">Sign In</a></li>
-
+                            <li><a href="Sign In.aspx">Signout</a></li>
+                            <li class="active"><a href="Courses.aspx">Courses</a></li>
+                            <li><a href="StudentCourseFee.aspx">Student Deposit</a></li>
+                            <li><a href="Courses.aspx">Instructor</a></li>
                         </ul>
                             </div>
                     </div>
                 </div>
              
         </div>
-        <!--Courses start-->
+        <!--Courses start-->  
         <div class="container">
-        <h2>All Online Courses Available For Students</h2>
-        <hr />           
-        <div class="center-page">
-            <label class="col-xs-11">Course Name</label>
-             <div class="col-xs-11">
-                <asp:TextBox ID="tbCoursename" runat="server" Class="form-control" placeholder="CourseName"></asp:TextBox>
-            </div>
-            <label class="col-xs-11">Description</label>
-             <div class="col-xs-11">
-                <asp:TextBox ID="tbDescription" runat="server" Class="form-control" placeholder="Description"></asp:TextBox>
-             </div>
-             <label class="col-xs-11">Duration</label>
-             <div class="col-xs-11">
-                <asp:TextBox ID="tbDuration" runat="server" Class="form-control" placeholder="Duration" ></asp:TextBox>
-            </div>
-             <label class="col-xs-11">Start Time</label>
-             <div class="col-xs-11">
-                <asp:TextBox ID="tbStartTime" runat="server" Class="form-control" placeholder="StartTime"></asp:TextBox>
-            </div>
-             <label class="col-xs-11">Fee</label>
-             <div class="col-xs-11">
-               <asp:TextBox ID="tbFee" runat="server" Class="form-control" placeholder="Fee"></asp:TextBox>
-             </div>
-             <div class="col-xs-11">
-                <asp:Button ID="btAddCourse" runat="server" Class="btn btn-success" Text="Add"/>
-            </div>
-             <div class="col-xs-11">
-                <asp:Label ID="lblMsg" runat="server"></asp:Label>
-            </div>
+            <div class="form-horizontal">
+                <h2>Online Courses</h2>
+                <hr/>
+                 <asp:HiddenField ID="hfCourseID" runat="server" />
+             <div class="form-group">
+                    <asp:Label ID="Label1" runat="server" CssClass="col-md-2 control-label" Text="Course Name"></asp:Label>
+                    <div class="col-md-3">
+                        <asp:TextBox ID="txtCourseName" CssClass="form-control" runat="server"></asp:TextBox>
+                 <div>
+                     <asp:Label ID="Label3" runat="server"  Text=" " ForeColor="Red"></asp:Label>
+                 </div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <asp:Label ID="Label5" runat="server" CssClass="col-md-2 control-label" Text="Description"></asp:Label>
+                    <div class="col-md-3">
+                        <asp:TextBox ID="txtDescription" CssClass="form-control" runat="server"></asp:TextBox>
+                 <div>
+                     <asp:Label ID="Label6" runat="server"  Text=" " ForeColor="Red"></asp:Label>
+                 </div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <asp:Label ID="Label2" runat="server" CssClass="col-md-2 control-label" Text="Duration"></asp:Label>
+                    <div class="col-md-3">
+                        <asp:TextBox ID="txtDuration" CssClass="form-control" runat="server"></asp:TextBox>
+                       
+                    <div>
+                    <asp:Label ID="Label4" runat="server" ForeColor="Red" Text=" "></asp:Label>
+                </div>
+                        </div>
+                    </div>
+                <div class="form-group">
+                    <asp:Label ID="Label7" runat="server" CssClass="col-md-2 control-label" Text="Start Time"></asp:Label>
+                    <div class="col-md-3">
+                        <asp:TextBox ID="Txtstarttime" CssClass="form-control" runat="server"></asp:TextBox>
+                 <div>
+                     <asp:Label ID="Label8" runat="server"  Text=" " ForeColor="Red"></asp:Label>
+                 </div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <asp:Label ID="Label9" runat="server" CssClass="col-md-2 control-label" Text="Fee"></asp:Label>
+                    <div class="col-md-3">
+                        <asp:TextBox ID="TxtFee" CssClass="form-control" runat="server"></asp:TextBox>
+                 <div>
+                     <asp:Label ID="Label10" runat="server"  Text=" " ForeColor="Red"></asp:Label>
+                 </div>
+                        </div>
+                </div>
+              <div class="form-group">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-6">
+                        <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-default" style="font-family: Arial" OnClick="btnAdd_Click"/>
+                        <asp:Button ID="btnDelete" runat="server" OnClientClick="return confirm('Are you sure to delete');" Text="Delete" CssClass="btn btn-default" style="font-family: Arial" OnClick="btnDelete_Click"/>
+                        <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="btn btn-default" style="font-family: Arial" OnClick="btnClear_Click"/>  
+                         </div>
+
+                </div>
+                </div>
+             <table>
+                <tr>
+                    <td colspan="2">
+                        <asp:Label ID="lblSuccessMessage" runat="server" Text="" ForeColor="Green"></asp:Label>
+                      
+                    </td>
+                     
+                </tr>
+                <tr>
+                    <td>
+                        
+                        
+                    </td>
+                    <td colspan="2">
+                        <asp:Label ID="lblErrormessage" runat="server" Text="" ForeColor="Red"></asp:Label>
+                    </td>
+                     
+                </tr>
+            </table>
+            <hr />
              <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt">
                 <Columns>
+                    <asp:BoundField DataField="CourseID" HeaderText="CourseID"/>
                     <asp:BoundField DataField="CourseName" HeaderText="CourseName"/>
                     <asp:BoundField DataField="CourseDescription" HeaderText="CourseDescription"/>
                     <asp:BoundField DataField="Duration" HeaderText="Duration"/>
                     <asp:BoundField DataField="StartTime" HeaderText="StartTime"/>
                     <asp:BoundField DataField="Fee" HeaderText="Fee"/>
-                    <asp:TemplateField>
+                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:LinkButton ID="lnkenroll" runat="server">Enroll Now!!</asp:LinkButton>
+                            <asp:LinkButton ID="lnkview" runat="server" CommandArgument='<%# Eval("CourseID")%>' OnClick="lnk_OnClick">View</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

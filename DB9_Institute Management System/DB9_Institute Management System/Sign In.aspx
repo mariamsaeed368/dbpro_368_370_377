@@ -43,7 +43,7 @@
                         <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="Default.aspx">Home</a></li>
-                            <li class="active"><a href="Sign In.aspx">Sign In</a></li>
+                            <li><a href="SignUp.aspx">Sign Up</a></li>
 
                         </ul>
                             </div>
@@ -56,6 +56,17 @@
             <div class="form-horizontal">
                 <h2>Login</h2>
                 <hr />
+                <asp:HiddenField ID="hfPersonID" runat="server" />
+                 <div class="form-group">
+                    <asp:Label ID="Role" runat="server" CssClass="col-md-2 control-label" Text="Role"></asp:Label>
+                    <div class="col-md-3">
+                        <asp:DropDownList ID="dropRole" CssClass="form-control" runat="server" Width="194px">
+                            <asp:ListItem>Instructor</asp:ListItem>
+                            <asp:ListItem>Student</asp:ListItem>
+                            <asp:ListItem>Admin</asp:ListItem>
+                        </asp:DropDownList>
+                </div>
+                </div>
                 <div class="form-group">
                     <asp:Label ID="Label1" runat="server" CssClass="col-md-2 control-label" Text="Email"></asp:Label>
                     <div class="col-md-3">
@@ -78,7 +89,7 @@
                 <div class="form-group">
                     <div class="col-md-2"></div>
                     <div class="col-md-6">
-                        <asp:Button ID="Button1" runat="server" Text="Login" Class="btn btn-success"/>
+                        <asp:Button ID="Button1" runat="server" Text="Login" Class="btn btn-success" OnClick="Button1_Click"/>
                         <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/SignUp.aspx" CssClass="auto-style1">Sign Up</asp:LinkButton>
                     </div>
                 </div>
