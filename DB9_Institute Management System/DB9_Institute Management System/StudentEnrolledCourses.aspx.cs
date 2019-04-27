@@ -11,7 +11,7 @@ namespace DB9_Institute_Management_System
 {
     public partial class StudentEnrolledCourses : System.Web.UI.Page
     {
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=SONY\SQLEXPRESS;Initial Catalog=DB9;Integrated Security=True");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-4NQFIN1\FATIMAKHALIL;Initial Catalog=DB9;Integrated Security=true");
         protected void Page_Load(object sender, EventArgs e)
         {
             if(sqlCon.State == ConnectionState.Closed)

@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddInstructor.aspx.cs" Inherits="DB9_Institute_Management_System.AddInstructor" %>
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -51,6 +50,11 @@
             <div class="form-horizontal">
                 <h2>InstructorDetail</h2>
                 <hr/>
+                   <div class="form-group">
+                <asp:HiddenField ID="hfInstructorId" runat="server" />
+                 </div>
+               
+               
                  <div class="form-group">
                     <asp:Label ID="Name" runat="server" CssClass="col-md-2 control-label" Text="Name"></asp:Label>
                     <div class="col-md-3">
@@ -82,15 +86,26 @@
                     </div>
                 </div>
                
-              
-                <div class="form-group">
+              <div class="form-group">
                     <div class="col-md-2"></div>
                     <div class="col-md-6">
-                        <asp:Button ID="BtnAdd" runat="server" Text="Add" Class="btn btn-success"/>
-                        <asp:Button ID="btnDelete" runat="server" Text="Delete" Class="btn btn-success" />
-                        <asp:Button ID="btnClear" runat="server" Text="Clear"   Class="btn btn-success" />
+                        <asp:Label ID="lblError" runat="server" CssClass="text-danger"></asp:Label>
                     </div>
                 </div>
+            </div>
+        </div>
+               
+             
+                     <div class="form-group">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-6">
+                        <asp:Button ID="btnAdd" runat="server" Text="ADD" OnClick="btnAdd_Click"  Class="btn btn-success"/>
+                        <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click"  Class="btn btn-success"/>
+                        <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click"  Class="btn btn-success"/>
+                       
+                    </div>
+                </div>
+                
                 <div class="col-xs-11">
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" Width="860px">
                 <Columns>
@@ -100,18 +115,10 @@
                     <asp:BoundField DataField="Email" HeaderText="Email"/>
                      <asp:BoundField DataField="Password" HeaderText="Password"/>
                     <asp:TemplateField>
+                        
+                        
                         <ItemTemplate>
-                            <asp:LinkButton ID="lnkEdit" runat="server">Edit</asp:LinkButton>
-                        </ItemTemplate>
-                     </asp:TemplateField>
-                     <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:LinkButton ID="lnkDelete" runat="server">Delete</asp:LinkButton>
-                        </ItemTemplate>
-                         </asp:TemplateField>
-                          <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:LinkButton ID="lnkview" runat="server">View</asp:LinkButton>
+                            <asp:LinkButton ID="lnkview" runat="server" CommandArgument='<%# Eval("InstructorID")%>' OnClick="lnk_OnClick">View</asp:LinkButton>
                         </ItemTemplate>
 
                     </asp:TemplateField>
@@ -152,14 +159,7 @@
 .mGrid .pgr a { color: #666; text-decoration: none; }
 .mGrid .pgr a:hover { color: #000; text-decoration: none; }
         </style>
-                 <div class="form-group">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-6">
-                        <asp:Label ID="lblError" runat="server" CssClass="text-danger"></asp:Label>
-                    </div>
-                </div>
-            </div>
-        </div>
+                 
     </form>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>

@@ -22,6 +22,15 @@ namespace DB9_Institute_Management_System {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// hfQuestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfQuestion;
+        
+        /// <summary>
         /// hfInstructorId control.
         /// </summary>
         /// <remarks>
@@ -31,40 +40,31 @@ namespace DB9_Institute_Management_System {
         protected global::System.Web.UI.WebControls.HiddenField hfInstructorId;
         
         /// <summary>
-        /// Course_Id control.
+        /// hfCourse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Course_Id;
+        protected global::System.Web.UI.WebControls.HiddenField hfCourse;
         
         /// <summary>
-        /// CourseID control.
+        /// Question control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CourseID;
+        protected global::System.Web.UI.WebControls.Label Question;
         
         /// <summary>
-        /// Question_Id control.
+        /// txtQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Question_Id;
-        
-        /// <summary>
-        /// QuestionID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList QuestionID;
+        protected global::System.Web.UI.WebControls.TextBox txtQuestion;
         
         /// <summary>
         /// Option1 control.
@@ -112,13 +112,13 @@ namespace DB9_Institute_Management_System {
         protected global::System.Web.UI.WebControls.Label option3;
         
         /// <summary>
-        /// txtoption3 control.
+        /// txtOption3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtoption3;
+        protected global::System.Web.UI.WebControls.TextBox txtOption3;
         
         /// <summary>
         /// option4 control.
@@ -157,13 +157,13 @@ namespace DB9_Institute_Management_System {
         protected global::System.Web.UI.WebControls.TextBox txtCorrectAnswer;
         
         /// <summary>
-        /// BtnAdd control.
+        /// btnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAdd;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
         
         /// <summary>
         /// btnDelete control.

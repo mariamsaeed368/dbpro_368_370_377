@@ -230,3 +230,11 @@ C:\Users\Vaio\Desktop\Github\dbpro_368_370_377\DB9_Institute Management System\D
 C:\Users\Vaio\Desktop\Github\dbpro_368_370_377\DB9_Institute Management System\DB9_Institute Management System\bin\EntityFramework.SqlServer.xml
 C:\Users\Vaio\Desktop\Github\dbpro_368_370_377\DB9_Institute Management System\DB9_Institute Management System\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Vaio\Desktop\Github\dbpro_368_370_377\DB9_Institute Management System\DB9_Institute Management System\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\hp\Desktop\DBMS\dbpro_368_370_377\DB9_Institute Management System\DB9_Institute Management System\bin\EntityFramework.dll
+C:\Users\hp\Desktop\DBMS\dbpro_368_370_377\DB9_Institute Management System\DB9_Institute Management System\bin\EntityFramework.SqlServer.dll
+C:\Users\hp\Desktop\DBMS\dbpro_368_370_377\DB9_Institute Management System\DB9_Institute Management System\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\hp\Desktop\DBMS\dbpro_368_370_377\DB9_Institute Management System\DB9_Institute Management System\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\hp\Desktop\DBMS\dbpro_368_370_377\DB9_Institute Management System\DB9_Institute Management System\bin\EntityFramework.xml
+C:\Users\hp\Desktop\DBMS\dbpro_368_370_377\DB9_Institute Management System\DB9_Institute Management System\bin\EntityFramework.SqlServer.xml
+C:\Users\hp\Desktop\DBMS\dbpro_368_370_377\DB9_Institute Management System\DB9_Institute Management System\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\hp\Desktop\DBMS\dbpro_368_370_377\DB9_Institute Management System\DB9_Institute Management System\bin\Microsoft.AspNet.Identity.EntityFramework.xml

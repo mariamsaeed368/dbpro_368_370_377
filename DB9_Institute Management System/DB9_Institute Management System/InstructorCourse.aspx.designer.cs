@@ -22,6 +22,15 @@ namespace DB9_Institute_Management_System {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// hfInstructorId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfInstructorId;
+        
+        /// <summary>
         /// Instructor_Id control.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,13 @@ namespace DB9_Institute_Management_System {
         protected global::System.Web.UI.WebControls.Label Instructor_Id;
         
         /// <summary>
-        /// InstructorID control.
+        /// Instructor_ID1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList InstructorID;
+        protected global::System.Web.UI.WebControls.DropDownList Instructor_ID1;
         
         /// <summary>
         /// Course_Id control.
@@ -49,58 +58,22 @@ namespace DB9_Institute_Management_System {
         protected global::System.Web.UI.WebControls.Label Course_Id;
         
         /// <summary>
-        /// CourseID control.
+        /// Course_ID1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CourseID;
+        protected global::System.Web.UI.WebControls.DropDownList Course_ID1;
         
         /// <summary>
-        /// CourseName control.
+        /// btnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CourseName;
-        
-        /// <summary>
-        /// txtCourseName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseName;
-        
-        /// <summary>
-        /// CourseDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CourseDescription;
-        
-        /// <summary>
-        /// txtCourseDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCourseDescription;
-        
-        /// <summary>
-        /// BtnAdd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAdd;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
         
         /// <summary>
         /// btnDelete control.
@@ -112,13 +85,13 @@ namespace DB9_Institute_Management_System {
         protected global::System.Web.UI.WebControls.Button btnDelete;
         
         /// <summary>
-        /// btnClear control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClear;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// GridView1 control.
@@ -128,14 +101,5 @@ namespace DB9_Institute_Management_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// lblError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

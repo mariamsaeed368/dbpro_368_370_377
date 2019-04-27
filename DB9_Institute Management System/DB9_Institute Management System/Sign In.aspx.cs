@@ -14,6 +14,7 @@ namespace DB9_Institute_Management_System
 {
     public partial class Sign_In : System.Web.UI.Page
     {
+        public static string sendtext0 = " ";
         public static string sendtext = " ";
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,7 +31,8 @@ namespace DB9_Institute_Management_System
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string CS = @"Data Source=SONY\SQLEXPRESS;Initial Catalog=DB9;Integrated Security=True";
+            string CS = @"Data Source=DESKTOP-4NQFIN1\FATIMAKHALIL;Initial Catalog=DB9;Integrated Security=true";
+
             if (dropRole.SelectedItem.Text == "Student")
             {
                 using (SqlConnection con = new SqlConnection(CS))
@@ -141,8 +143,13 @@ namespace DB9_Institute_Management_System
             {
                 using (SqlConnection con = new SqlConnection(CS))
                 {
-                    SqlCommand read1 = new SqlCommand("Select * from [DB9].[dbo].[Instructor] where Email='" + tbEmail.Text + "' and Password='" + tbPassword.Text + "'", con);
+                     
                     con.Open();
+                    SqlCommand id = new SqlCommand("Select InstructorID from [DB9].[dbo].[Instructor] where Email='" + tbEmail.Text + "' and Password='" + tbPassword.Text + "'", con);
+                    int InstructorNo = Convert.ToInt32(id.ExecuteScalar());
+
+                    SqlCommand read1 = new SqlCommand("Select * from [DB9].[dbo].[Instructor] where Email='" + tbEmail.Text + "' and Password='" + tbPassword.Text + "'", con);
+                    
                     SqlDataAdapter sda1 = new SqlDataAdapter(read1);
                     DataTable dt1 = new DataTable();
                     sda1.Fill(dt1);
@@ -152,7 +159,10 @@ namespace DB9_Institute_Management_System
                         Utype1 = dt1.Rows[0]["UserType"].ToString().Trim();
                         if (Utype1 == "I")
                         {
-                            Response.Redirect("~/AddQuestions.aspx");
+                            hfPersonID.Value = InstructorNo.ToString();
+
+                            sendtext0 = InstructorNo.ToString();
+                            Response.Redirect("~/InstructorViewCourses.aspx");
                         }
                         else
                         {

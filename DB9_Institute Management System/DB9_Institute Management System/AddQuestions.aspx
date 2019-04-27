@@ -39,6 +39,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="Default.aspx">Home</a></li>
                             <li class="active"><a href="Sign In.aspx">Sign In</a></li>
+                             <li class="active"><a href="InstructorViewCourses.aspx">InstructorViewCourses</a></li>
 
                         </ul>
                             </div>
@@ -51,21 +52,22 @@
             <div class="form-horizontal">
                 <h2>Create Tests</h2>
                 <hr/>
+                <div class="form-group">
+                <asp:HiddenField ID="hfQuestion" runat="server" />
+                 </div>
                  <div class="form-group">
                 <asp:HiddenField ID="hfInstructorId" runat="server" />
                  </div>
+                <div class="form-group">
+                <asp:HiddenField ID="hfCourse" runat="server" />
+                 </div>
                
+                 
                  <div class="form-group">
-                    <asp:Label ID="Course_Id" runat="server" CssClass="col-md-2 control-label" Text="Select CourseID"></asp:Label>
-                    <div class="col-md-3">
-                        <asp:DropDownList ID="CourseID" CssClass="form-control" runat="server" Width="194px"></asp:DropDownList>
-                </div>
-                        </div>
-                 <div class="form-group">
-                    <asp:Label ID="Question_Id" runat="server" CssClass="col-md-2 control-label" Text="Select QuestionID"></asp:Label>
-                    <div class="col-md-3">
-                        <asp:DropDownList ID="QuestionID" CssClass="form-control" runat="server" Width="194px"></asp:DropDownList>
-                </div>
+                    <asp:Label ID="Question" runat="server" CssClass="col-md-2 control-label" Text="Question"></asp:Label>
+                   <div class="col-md-3">
+                        <asp:TextBox ID="txtQuestion" CssClass="form-control" runat="server" placeholder="Add Question" Width="194px"></asp:TextBox>
+                    </div>
                 </div>
                   
                  <div class="form-group">
@@ -83,7 +85,7 @@
                        <div class="form-group">
                     <asp:Label ID="option3" runat="server" CssClass="col-md-2 control-label" Text="Option"></asp:Label>
                     <div class="col-md-3">
-                        <asp:TextBox ID="txtoption3" CssClass="form-control" runat="server" placeholder="Option3" Width="194px"></asp:TextBox>
+                        <asp:TextBox ID="txtOption3" CssClass="form-control" runat="server" placeholder="Option3" Width="194px"></asp:TextBox>
                     </div>
                 </div>
                        <div class="form-group">
@@ -101,9 +103,9 @@
                  <div class="form-group">
                     <div class="col-md-2"></div>
                     <div class="col-md-6">
-                        <asp:Button ID="BtnAdd" runat="server" Text="Add" Class="btn btn-success"/>
-                        <asp:Button ID="btnDelete" runat="server" Text="Delete" Class="btn btn-success" />
-                        <asp:Button ID="btnClear" runat="server" Text="Clear"   Class="btn btn-success" />
+                       <asp:Button ID="btnAdd" runat="server" Text="ADD" OnClick="btnAdd_Click"  Class="btn btn-success"/>
+                        <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click"  Class="btn btn-success"/>
+                        <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click"  Class="btn btn-success"/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -115,27 +117,19 @@
                  <div class="col-xs-11">
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" Width="860px">
                 <Columns>
-                    <asp:BoundField DataField="InstructorID" HeaderText="InstructorID"/>
-                    <asp:BoundField DataField="CourseID" HeaderText="CourseID"/>
+                    
+                    <asp:BoundField DataField="Question" HeaderText="CourseID"/>
                     <asp:BoundField DataField="Option1" HeaderText="Option1"/>
                       <asp:BoundField DataField="Option2" HeaderText="Option2"/>
                       <asp:BoundField DataField="Option3" HeaderText="Option3"/>
                       <asp:BoundField DataField="Option4" HeaderText="Option4"/>
                        <asp:BoundField DataField="CorrectAnswer" HeaderText="CorrectAnswer"/>
                     
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:LinkButton ID="lnkEdit" runat="server">Edit</asp:LinkButton>
-                        </ItemTemplate>
-                     </asp:TemplateField>
-                     <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:LinkButton ID="lnkDelete" runat="server">Delete</asp:LinkButton>
-                        </ItemTemplate>
-                         </asp:TemplateField>
+                     
+                       
                           <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:LinkButton ID="lnkview" runat="server">View</asp:LinkButton>
+                            <asp:LinkButton ID="lnkview" runat="server" CommandArgument='<%# Eval("QuestionID")%>' OnClick="lnk_OnClick">View</asp:LinkButton>
                         </ItemTemplate>
 
                     </asp:TemplateField>

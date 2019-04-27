@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorCourse.aspx.cs" Inherits="DB9_Institute_Management_System.InstructorCourse" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InstructorViewCourses.aspx.cs" Inherits="DB9_Institute_Management_System.InstructorViewCourses" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>InstructorCourses</title>
+    <title>AddInstructorDetail</title>
    <script src="js/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -40,7 +39,6 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="Default.aspx">Home</a></li>
                             <li class="active"><a href="Sign In.aspx">Sign In</a></li>
-                             <li class="active"><a href="AddInstructor.aspx">AddInstructor</a></li>
 
                         </ul>
                             </div>
@@ -51,65 +49,42 @@
         <!-----SingIn Start--->
          <div class="container">
             <div class="form-horizontal">
-                <h2>Assign Courses to Instructor</h2>
+                <h2>InstructorCourses</h2>
                 <hr/>
-                <div class="form-group">
+                   <div class="form-group">
+                <asp:HiddenField ID="hfInstructorCourseId" runat="server" />
+                 </div>
+                 <div class="form-group">
                 <asp:HiddenField ID="hfInstructorId" runat="server" />
                  </div>
                 <div class="form-group">
-                    <asp:Label ID="Instructor_Id" runat="server" CssClass="col-md-2 control-label" Text="Select InstructorID"  ></asp:Label>
-                    <div class="col-md-3">
-                        <asp:DropDownList ID="Instructor_ID1" CssClass="form-control" runat="server"  Width="194px"></asp:DropDownList>
-                        
-                    </div>
-                </div>
-                 <div class="form-group">
-                    <asp:Label ID="Course_Id" runat="server" CssClass="col-md-2 control-label" Text="Select Course" ></asp:Label>
-                    <div class="col-md-3">
-                        <asp:DropDownList ID="Course_ID1" CssClass="form-control" runat="server" Width="194px"  ></asp:DropDownList>
-
-                </div>
-                </div>
-                 
-        
-        </div>
+                <asp:HiddenField ID="hfCourses" runat="server" />
+                 </div>
+               </div>       
+          </div>
                
-                 <div class="form-group">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-6">
-                         <asp:Button ID="btnAdd" runat="server" Text="ADD" OnClick="btnAdd_Click"  Class="btn btn-success"/>
-                        <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click"  Class="btn btn-success"/>
-                    </div>
-                </div>
-                
-                 <div class="form-group">
-                    <asp:Label ID="Label1" runat="server" CssClass="col-md-2 control-label" Text="" ></asp:Label>
+             
                     
-                </div>
                 
-                 <div class="col-xs-11">
+                <div class="col-xs-11">
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" Width="860px">
                 <Columns>
                     <asp:BoundField DataField="InstructorID" HeaderText="InstructorID"/>
                     <asp:BoundField DataField="CourseID" HeaderText="CourseID"/>
                     <asp:BoundField DataField="CourseName" HeaderText="CourseName"/>
                     <asp:BoundField DataField="CourseDescription" HeaderText="CourseDescription"/>
-                    
-                    
-                       
-                          <asp:TemplateField>
+                     
+                    <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:LinkButton ID="lnkview" runat="server" CommandArgument='<%# Eval("InstructorCourseID")%>' OnClick="lnk_OnClick">View</asp:LinkButton>
+                            <asp:LinkButton ID="lnkAddQuestions" runat="server" CommandArgument='<%# Eval("InstructorCourseID")%>' OnClick="lnk_OnClick">Add Questions</asp:LinkButton>
                         </ItemTemplate>
 
                     </asp:TemplateField>
-                     
                 </Columns>
             </asp:GridView>
                 </div>
                  <style>
-            .mGrid { 
-                    width: 100%; 
+                     .mGrid { 
                     background-color: #fff; 
                     margin: 5px 0 10px 0; 
                     border: solid 1px #525252; 
@@ -142,9 +117,10 @@
 .mGrid .pgr a:hover { color: #000; text-decoration: none; }
         </style>
                  
-            
     </form>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+
+

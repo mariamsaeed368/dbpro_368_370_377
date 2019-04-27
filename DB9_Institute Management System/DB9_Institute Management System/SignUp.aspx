@@ -51,6 +51,9 @@
            <!---- <div class="form-horizontal">--->
                 <h2>Registration</h2>
                 <hr />           
+                <div class="form-group">
+                <asp:HiddenField ID="hfInstructorId" runat="server" />
+                 </div>
         <div class="center-page">
             <label class="col-xs-11">Name</label>
              <div class="col-xs-11">
