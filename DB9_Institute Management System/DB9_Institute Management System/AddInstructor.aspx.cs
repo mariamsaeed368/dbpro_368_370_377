@@ -12,7 +12,7 @@ namespace DB9_Institute_Management_System
     public partial class AddInstructor : System.Web.UI.Page
     {
         
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-4NQFIN1\FATIMAKHALIL;Initial Catalog=DB9;Integrated Security=true;");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-KM5HNLG;Initial Catalog=DB9;Integrated Security=True");
 
 
         protected void Page_Load(object sender, EventArgs e)

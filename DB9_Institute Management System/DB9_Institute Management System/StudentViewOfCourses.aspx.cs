@@ -12,8 +12,15 @@ namespace DB9_Institute_Management_System
     public partial class StudentViewOfCourses : System.Web.UI.Page
     {
         public static string sendtext = " ";
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-4NQFIN1\FATIMAKHALIL;Initial Catalog=DB9;Integrated Security=true");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-KM5HNLG;Initial Catalog=DB9;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                BindData();
+            }
+        }
+        protected void BindData()
         {
             if (sqlCon.State == ConnectionState.Closed)
                 sqlCon.Open();
@@ -23,16 +30,15 @@ namespace DB9_Institute_Management_System
             sqlDa.Fill(dtbl);
             sqlCon.Close();
             GridView1.DataSource = dtbl;
+            GridView1.DataSourceID = null;
             GridView1.DataBind();
         }
-
         protected void lnk_OnClick(object sender, EventArgs e)
         {
-            string CS = @"Data Source=SONY\SQLEXPRESS;Initial Catalog=DB9;Integrated Security=True";
+            string CS = @"Data Source=DESKTOP-KM5HNLG;Initial Catalog=DB9;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(CS))
             {
                 con.Open();
-                int rows;
                 hfPersonID.Value = Sign_In.sendtext;
                 int courseid = Convert.ToInt32((sender as LinkButton).CommandArgument);
                 // GridViewRow dgvRow = GridView1.SelectedRow;
@@ -52,6 +58,12 @@ namespace DB9_Institute_Management_System
                 //  con.Open();
                 //  cmd.ExecuteNonQuery();
             }
+        }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            BindData();
         }
     }
 }

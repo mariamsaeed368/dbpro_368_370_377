@@ -47,7 +47,7 @@
                             <li><a href="Sign In.aspx">Signout</a></li>
                             <li class="active"><a href="Courses.aspx">Courses</a></li>
                             <li><a href="StudentCourseFee.aspx">Student Deposit</a></li>
-                            <li><a href="Courses.aspx">Instructor</a></li>
+                            <li><a href="AddInstructor.aspx">Instructor</a></li>
                         </ul>
                             </div>
                     </div>
@@ -186,7 +186,7 @@
 .mGrid .pgr a:hover { color: #000; text-decoration: none; }
         </style>
         </div>
-            </div>
+            
     </form>
      <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>

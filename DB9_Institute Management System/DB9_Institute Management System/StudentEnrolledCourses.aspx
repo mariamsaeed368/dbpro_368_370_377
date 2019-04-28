@@ -56,24 +56,28 @@
         <h2>Enrolled Courses</h2>
         <hr />           
         <asp:HiddenField ID="hfPersonID" runat="server" />
-             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" Width="1083px">
+             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  GridLines="None" AllowPaging="True" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" Width="1083px" OnPageIndexChanging="GridView1_PageIndexChanging">
+<AlternatingRowStyle CssClass="alt"></AlternatingRowStyle>
                 <Columns>
+                    <asp:BoundField DataField="CourseID" HeaderText="CourseID"/>
                     <asp:BoundField DataField="CourseName" HeaderText="CourseName"/>
                     <asp:BoundField DataField="CourseDescription" HeaderText="CourseDescription"/>
                     <asp:BoundField DataField="Duration" HeaderText="Duration"/>
                     <asp:BoundField DataField="StartTime" HeaderText="StartTime"/>
                     <asp:BoundField DataField="Fee" HeaderText="Fee"/>
-                    <asp:TemplateField>
+                    <asp:TemplateField HeaderText="Start Test">
                         <ItemTemplate>
-                            <asp:LinkButton ID="lnkenroll" runat="server">Start Test!!</asp:LinkButton>
+                            <asp:LinkButton ID="startTest" runat="server" CommandArgument='<%#Eval("CourseID") %>' OnClick="startTest_OnClick">Start Test!!</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
+
+<PagerStyle CssClass="pgr"></PagerStyle>
             </asp:GridView>
                  <style>
                      .mGrid { 
                     background-color: #fff; 
-                    margin: 5px 125 10px 0; 
+                    margin: 5px 125px 10px 0; 
                     border: solid 1px #525252; 
                     border-collapse:collapse; 
                     }

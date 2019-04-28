@@ -58,14 +58,14 @@
                     <asp:Label ID="RegistrationNo" runat="server" CssClass="col-md-2 control-label" Text="RegistrationNo"></asp:Label>
                     <div class="col-md-3">
                         <asp:DropDownList ID="Register_No" CssClass="form-control" runat="server" DataSourceID="RegistrationNoDataSet" DataTextField="RegistrationNo" DataValueField="RegistrationNo" Width="142px"></asp:DropDownList>
-                        <asp:SqlDataSource ID="RegistrationNoDataSet" runat="server" ConnectionString="<%$ ConnectionStrings:DB9ConnectionString %>" SelectCommand="SELECT [RegistrationNo] FROM [Person] WHERE ([RegistrationNo] IS NOT NULL)"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="RegistrationNoDataSet" runat="server" ConnectionString="<%$ ConnectionStrings:DB9ConnectionString6 %>" SelectCommand="SELECT [RegistrationNo] FROM [Person]"></asp:SqlDataSource>
                 </div>
                 </div>
                  <div class="form-group">
                     <asp:Label ID="CourseID" runat="server" CssClass="col-md-2 control-label" Text="Course ID"></asp:Label>
                     <div class="col-md-3">
                         <asp:DropDownList ID="Course_ID" CssClass="form-control" runat="server" DataSourceID="CourseIDDataSet" DataTextField="CourseID" DataValueField="CourseID" Width="145px"></asp:DropDownList>
-                        <asp:SqlDataSource ID="CourseIDDataSet" runat="server" ConnectionString="<%$ ConnectionStrings:DB9ConnectionString %>" SelectCommand="SELECT [CourseID] FROM [Course]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="CourseIDDataSet" runat="server" ConnectionString="<%$ ConnectionStrings:DB9ConnectionString7 %>" SelectCommand="SELECT [CourseID] FROM [Course]"></asp:SqlDataSource>
                 </div>
                 </div>
                  <div class="form-group">
@@ -106,49 +106,18 @@
                 </tr>
             </table>
                 <hr />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Enableviewstate="False"  GridLines="None" AllowPaging="True" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowDeleting="GridView1_RowDeleting" OnRowUpdating="GridView1_RowUpdating">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Enableviewstate="False"  GridLines="None" AllowPaging="True" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowDeleting="GridView1_RowDeleting" OnRowUpdating="GridView1_RowUpdating" DataKeyNames="StudentCourseFeeID" DataSourceID="SqlDataSource1" OnPageIndexChanging="GridView1_PageIndexChanging">
                 <AlternatingRowStyle CssClass="alt"></AlternatingRowStyle>
                 <Columns>
-                    <asp:TemplateField HeaderText="PersonID">  
-                    <ItemTemplate>  
-                        <asp:Label ID="lbl_PersonID" runat="server" Text='<%#Eval("PersonID") %>'></asp:Label>  
-                    </ItemTemplate>  
-                   </asp:TemplateField>
-                    <asp:TemplateField HeaderText="CourseID">  
-                    <ItemTemplate>  
-                        <asp:Label ID="lbl_CourseID" runat="server" Text='<%#Eval("CourseID") %>'></asp:Label>  
-                    </ItemTemplate>  
-                  </asp:TemplateField>
-                   <asp:TemplateField HeaderText="TotalFee">  
-                    <ItemTemplate>  
-                        <asp:Label ID="lbl_total" runat="server" Text='<%#Eval("TotalFee")%>'></asp:Label>  
-                    </ItemTemplate>  
-                    <EditItemTemplate>  
-                        <asp:TextBox ID="txt_total" Text='<%#Eval("TotalFee")%>' runat="server"></asp:TextBox>
-                    </EditItemTemplate>  
-                </asp:TemplateField> 
-               <asp:TemplateField HeaderText="Status">  
-                    <ItemTemplate>  
-                        <asp:Label ID="lbl_status" runat="server" Text='<%#Eval("Status")%>'></asp:Label>  
-                    </ItemTemplate>  
-                    <EditItemTemplate>  
-                        <asp:TextBox ID="txt_status" Text='<%#Eval("Status")%>' runat="server"></asp:TextBox>
-                    </EditItemTemplate>  
-                </asp:TemplateField>
-                    <asp:TemplateField HeaderText="RegistratioNo">  
-                    <ItemTemplate>  
-                        <asp:Label ID="lbl_RegistrationNo" runat="server" Text='<%#Eval("RegistrationNo") %>'></asp:Label>  
-                    </ItemTemplate>  
-                </asp:TemplateField>  
-                <asp:TemplateField HeaderText="CourseName">  
-                    <ItemTemplate>  
-                        <asp:Label ID="lbl_CourseName" runat="server" Text='<%#Eval("CourseName") %>'></asp:Label>  
-                    </ItemTemplate>   
-                </asp:TemplateField>  
-                    <asp:CommandField HeaderText="Operations" ShowDeleteButton="True" ShowEditButton="True" />
+                    <asp:BoundField DataField="StudentCourseFeeID" HeaderText="StudentCourseFeeID" InsertVisible="False" ReadOnly="True" SortExpression="StudentCourseFeeID" />
+                    <asp:BoundField DataField="PersonID" HeaderText="PersonID" SortExpression="PersonID" />
+                    <asp:BoundField DataField="CourseID" HeaderText="CourseID" SortExpression="CourseID" />
+                    <asp:BoundField DataField="TotalFee" HeaderText="TotalFee" SortExpression="TotalFee" />
+                    <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
                 </Columns>
 <PagerStyle CssClass="pgr"></PagerStyle>
             </asp:GridView>
+                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB9ConnectionString8 %>" SelectCommand="SELECT * FROM [StudentCourseFee]"></asp:SqlDataSource>
                  <style>
             .mGrid { 
                     width: 100%; 
@@ -184,13 +153,11 @@
 .mGrid .pgr a:hover { color: #000; text-decoration: none; }
         </style>
                  <div class="form-group">
-                    <div class="col-md-2"></div>
                     <div class="col-md-6">
                         <asp:Label ID="lblError" runat="server" CssClass="text-danger"></asp:Label>
                     </div>
                 </div>
             </div>
-        </div>
     </form>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>

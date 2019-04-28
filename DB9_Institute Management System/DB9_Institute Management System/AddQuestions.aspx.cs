@@ -11,7 +11,7 @@ namespace DB9_Institute_Management_System
     public partial class Test : System.Web.UI.Page
     {
         
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-4NQFIN1\FATIMAKHALIL;Initial Catalog=DB9;Integrated Security=true;");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-KM5HNLG;Initial Catalog=DB9;Integrated Security=True");
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -66,13 +66,6 @@ namespace DB9_Institute_Management_System
                     sqlCmd.ExecuteNonQuery();
                     string QuestionID = hfQuestion.Value;
                     Clear();
-
-
-
-
-
-
-
                     if (QuestionID == "")
                     {
                         lblError.Text = "Added Successfully";
@@ -82,19 +75,9 @@ namespace DB9_Institute_Management_System
                         lblError.Text = "Updated Succesfully";
 
                     }
-
-
-
-
                     sqlCon.Close();
-
-
                     FillGridView();
-
-
-
                 }
-
                 catch (Exception ex)
                 {
                     lblError.Text = ex.Message;
@@ -109,26 +92,22 @@ namespace DB9_Institute_Management_System
                  try
                  {
 
-
-                hfInstructorId.Value = InstructorViewCourses.sendtext1;
-            sqlCon.Open();
+                    sqlCon.Open();
+                    hfInstructorId.Value = InstructorViewCourses.sendtext1;
+            
                     SqlDataAdapter sqlDa = new SqlDataAdapter("ViewAllQuestion", sqlCon);
                     sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
-            sqlDa.SelectCommand.Parameters.AddWithValue("@InstructorCourseId",Convert.ToInt32(hfInstructorId.Value));
-
-
-
-            DataTable dtbl = new DataTable();
+                    sqlDa.SelectCommand.Parameters.AddWithValue("@InstructorCourseId",Convert.ToInt32(hfInstructorId.Value));
+                    DataTable dtbl = new DataTable();
                     sqlDa.Fill(dtbl);
                     sqlCon.Close();
                     GridView1.DataSource = dtbl;
                     GridView1.DataBind();
-
               }
                 catch (Exception ex)
                 {
 
-                    lblError.Text = ex.Message;
+                   // lblError.Text = ex.Message;
                 }
 
         }

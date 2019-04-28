@@ -11,10 +11,10 @@ namespace DB9_Institute_Management_System
 {
     public partial class StudentCourseFee : System.Web.UI.Page
     {
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-4NQFIN1\FATIMAKHALIL;Initial Catalog=DB9;Integrated Security=true");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-KM5HNLG;Initial Catalog=DB9;Integrated Security=True;");
         protected void Page_Load(object sender, EventArgs e)
         {
-            FillGridView();
+           FillGridView();
         }
         void FillGridView()
         {
@@ -26,6 +26,7 @@ namespace DB9_Institute_Management_System
             sqlDa.Fill(dtbl);
             sqlCon.Close();
             GridView1.DataSource = dtbl;
+            GridView1.DataSourceID = null;
             GridView1.DataBind();
         }
         protected void btnClear_Click(object sender, EventArgs e)
@@ -113,7 +114,6 @@ namespace DB9_Institute_Management_System
             {
                 lblErrormessage.Text = "You have not entered the correct fee of this course.";
             }
-            
         }
 
         protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
@@ -134,6 +134,12 @@ namespace DB9_Institute_Management_System
             //Call ShowData method for displaying updated data  
             lblSuccessMessage.Text = "Selected Record Deleted";
             lblErrormessage.Text = " ";
+            FillGridView();
+        }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
             FillGridView();
         }
     }

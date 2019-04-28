@@ -53,7 +53,7 @@
                 <hr/>
                 <asp:Label ID="lblshow" runat="server"></asp:Label>
                 <asp:HiddenField ID="hfPersonID" runat="server" />
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" Width="1108px">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false"  GridLines="None" AllowPaging="true" CssClass="mGrid" PagerStyle-CssClass="pgr" AlternatingRowStyle-CssClass="alt" Width="1108px" OnPageIndexChanging="GridView1_PageIndexChanging">
                 <Columns>
                     <asp:BoundField DataField="CourseID" HeaderText="CourseID"/>
                     <asp:BoundField DataField="CourseName" HeaderText="CourseName"/>

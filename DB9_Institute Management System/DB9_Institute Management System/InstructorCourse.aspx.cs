@@ -12,7 +12,7 @@ namespace DB9_Institute_Management_System
 {
     public partial class InstructorCourse : System.Web.UI.Page
     {
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-4NQFIN1\FATIMAKHALIL;Initial Catalog=DB9;Integrated Security=true;");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-KM5HNLG;Initial Catalog=DB9;Integrated Security=True");
 
         
 
@@ -81,8 +81,6 @@ namespace DB9_Institute_Management_System
         public void Clear()
         {
             hfInstructorId.Value = "";
-
-           // Instructor_ID1.Text = Course_ID1.Text = "";
             Label1.Text = "";
             btnAdd.Text = "ADD";
             btnDelete.Enabled = false;
