@@ -39,8 +39,13 @@
                         <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="Default.aspx">Home</a></li>
-                            <li class="active"><a href="Sign In.aspx">Sign In</a></li>
-                             <li class="active"><a href="AddInstructor.aspx">AddInstructor</a></li>
+                            <li><a href="Sign In.aspx">Signout</a></li>
+                            <li><a href="Courses.aspx">Courses</a></li>
+                            <li><a href="StudentCourseFee.aspx">Student Deposit</a></li>
+                            <li><a href="AddInstructor.aspx">Instructor</a></li>
+                            <li class="active"><a href="InstructorCourse.aspx">Instructor Course</a></li>
+                            <li><a href="Reports.aspx">Reports</a></li>
+
 
                         </ul>
                             </div>

@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FinalTest.aspx.cs" Inherits="DB9_Institute_Management_System.FinalTest" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FinalTest.aspx.cs" Inherits="DB9_Institute_Management_System.FinalTest" %>
 
 <!DOCTYPE html>
 
@@ -39,14 +40,13 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="auto-style4" href="Default.aspx">Institute Management System</a>
+                        <a class="navbar-brand" href="Default.aspx">Institute Management System</a>
                     </div>
                         <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="Default.aspx">Home</a></li>
                             <li><a href="Sign In.aspx">Signout</a></li>
                             <li><a href="StudentViewOfCourses.aspx">Available Courses</a></li>
-                            <li><a href="Result.aspx">Results</a></li>
                         </ul>
                             </div>
                     </div>
@@ -69,7 +69,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:GridView ID="grdquestions" runat="server" AutoGenerateColumns="false" OnRowDataBound="grdquestions_RowDataBound" DataKeyNames="QuestionID" Width="100%">
+                                <asp:GridView ID="grdquestions" runat="server" AutoGenerateColumns="false" OnRowDataBound="grdquestions_RowDataBound" DataKeyNames="QuestionID" Width="100%" OnSelectedIndexChanged="grdquestions_SelectedIndexChanged">
                                     <Columns>
                                         <asp:TemplateField HeaderText="Final Test">
                                             <ItemTemplate>
@@ -179,7 +179,7 @@
                         setTimeout('Decrement()', 1000);
                     }
                     else {
-                        window.location.href = "Result.aspx?timeout=1"
+                        window.location.href = "Sign In.aspx?timeout=1"
                     }
                 }
 

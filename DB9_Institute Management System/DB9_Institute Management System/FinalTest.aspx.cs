@@ -12,7 +12,7 @@ namespace DB9_Institute_Management_System
     public partial class FinalTest : System.Web.UI.Page
     {
         DataTable dt = new DataTable();
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-KM5HNLG;Initial Catalog=DB9;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=SONY\SQLEXPRESS;Initial Catalog=DB9;Integrated Security=True");
         int g = 0;
         int g1 = 0;
         protected void Page_Load(object sender, EventArgs e)
@@ -58,7 +58,9 @@ namespace DB9_Institute_Management_System
 
         }
 
-        
-       
+        protected void grdquestions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

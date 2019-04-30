@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SubmittedDuesDataSet" targetNamespace="http://tempuri.org/SubmittedDuesDataSet.xsd" xmlns:mstns="http://tempuri.org/SubmittedDuesDataSet.xsd" xmlns="http://tempuri.org/SubmittedDuesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB9ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB9ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DB9_Institute_Management_System.Properties.Settings.GlobalReference.Default.DB9ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SubmittedFeeViewTableAdapter" GeneratorDataComponentClassName="SubmittedFeeViewTableAdapter" Name="SubmittedFeeView" UserDataComponentName="SubmittedFeeViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DB9ConnectionString (Settings)" DbObjectName="DB9.dbo.SubmittedFeeView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT PersonID, CourseID, Status, TotalFee, RegistrationNo, Name FROM dbo.SubmittedFeeView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PersonID" DataSetColumn="PersonID" />
+              <Mapping SourceColumn="CourseID" DataSetColumn="CourseID" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="TotalFee" DataSetColumn="TotalFee" />
+              <Mapping SourceColumn="RegistrationNo" DataSetColumn="RegistrationNo" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SubmittedDuesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SubmittedDuesDataSet" msprop:Generator_UserDSName="SubmittedDuesDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SubmittedFeeView" msprop:Generator_TableClassName="SubmittedFeeViewDataTable" msprop:Generator_TableVarName="tableSubmittedFeeView" msprop:Generator_TablePropName="SubmittedFeeView" msprop:Generator_RowDeletingName="SubmittedFeeViewRowDeleting" msprop:Generator_RowChangingName="SubmittedFeeViewRowChanging" msprop:Generator_RowEvHandlerName="SubmittedFeeViewRowChangeEventHandler" msprop:Generator_RowDeletedName="SubmittedFeeViewRowDeleted" msprop:Generator_UserTableName="SubmittedFeeView" msprop:Generator_RowChangedName="SubmittedFeeViewRowChanged" msprop:Generator_RowEvArgName="SubmittedFeeViewRowChangeEvent" msprop:Generator_RowClassName="SubmittedFeeViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PersonID" msprop:Generator_ColumnVarNameInTable="columnPersonID" msprop:Generator_ColumnPropNameInRow="PersonID" msprop:Generator_ColumnPropNameInTable="PersonIDColumn" msprop:Generator_UserColumnName="PersonID" type="xs:int" />
+              <xs:element name="CourseID" msprop:Generator_ColumnVarNameInTable="columnCourseID" msprop:Generator_ColumnPropNameInRow="CourseID" msprop:Generator_ColumnPropNameInTable="CourseIDColumn" msprop:Generator_UserColumnName="CourseID" type="xs:int" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalFee" msprop:Generator_ColumnVarNameInTable="columnTotalFee" msprop:Generator_ColumnPropNameInRow="TotalFee" msprop:Generator_ColumnPropNameInTable="TotalFeeColumn" msprop:Generator_UserColumnName="TotalFee" type="xs:double" minOccurs="0" />
+              <xs:element name="RegistrationNo" msprop:Generator_ColumnVarNameInTable="columnRegistrationNo" msprop:Generator_ColumnPropNameInRow="RegistrationNo" msprop:Generator_ColumnPropNameInTable="RegistrationNoColumn" msprop:Generator_UserColumnName="RegistrationNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

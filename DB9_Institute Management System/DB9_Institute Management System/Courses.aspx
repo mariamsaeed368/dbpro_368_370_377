@@ -48,6 +48,9 @@
                             <li class="active"><a href="Courses.aspx">Courses</a></li>
                             <li><a href="StudentCourseFee.aspx">Student Deposit</a></li>
                             <li><a href="AddInstructor.aspx">Instructor</a></li>
+                            <li><a href="InstructorCourse.aspx">Instructor Course</a></li>
+                            <li class="active"><a href="Reports.aspx">Reports</a></li>
+
                         </ul>
                             </div>
                     </div>

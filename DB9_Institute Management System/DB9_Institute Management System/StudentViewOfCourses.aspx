@@ -41,7 +41,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="Default.aspx">Home</a></li>
                             <li><a href="Sign In.aspx">Signout</a></li>
-                            <li><a href="StudentEnrolledCourses.aspx">Enrolled Courses</a></li>
+                            <li><a href="StudentViewOfCourses.aspx">Available Courses</a></li>
                         </ul>
                             </div>
                     </div>

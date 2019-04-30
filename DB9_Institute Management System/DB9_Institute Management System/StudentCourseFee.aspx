@@ -43,6 +43,9 @@
                             <li><a href="Courses.aspx">Courses</a></li>
                             <li class="active"><a href="StudentCourseFee.aspx">Student Deposit</a></li>
                             <li><a href="AddInstructor.aspx">Instructor</a></li>
+                            <li><a href="InstructorCourse.aspx">Instructor Course</a></li>
+                            <li class="active"><a href="Reports.aspx">Reports</a></li>
+
                         </ul>
                             </div>
                     </div>
@@ -57,15 +60,15 @@
                 <div class="form-group">
                     <asp:Label ID="RegistrationNo" runat="server" CssClass="col-md-2 control-label" Text="RegistrationNo"></asp:Label>
                     <div class="col-md-3">
-                        <asp:DropDownList ID="Register_No" CssClass="form-control" runat="server" DataSourceID="RegistrationNoDataSet" DataTextField="RegistrationNo" DataValueField="RegistrationNo" Width="142px"></asp:DropDownList>
-                        <asp:SqlDataSource ID="RegistrationNoDataSet" runat="server" ConnectionString="<%$ ConnectionStrings:DB9ConnectionString6 %>" SelectCommand="SELECT [RegistrationNo] FROM [Person]"></asp:SqlDataSource>
+                        <asp:DropDownList ID="Register_No" CssClass="form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="RegistrationNo" DataValueField="RegistrationNo" Width="142px"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB9 %>" SelectCommand="SELECT [RegistrationNo] FROM [Person] WHERE ([RegistrationNo] IS NOT NULL)"></asp:SqlDataSource>
                 </div>
                 </div>
                  <div class="form-group">
                     <asp:Label ID="CourseID" runat="server" CssClass="col-md-2 control-label" Text="Course ID"></asp:Label>
                     <div class="col-md-3">
-                        <asp:DropDownList ID="Course_ID" CssClass="form-control" runat="server" DataSourceID="CourseIDDataSet" DataTextField="CourseID" DataValueField="CourseID" Width="145px"></asp:DropDownList>
-                        <asp:SqlDataSource ID="CourseIDDataSet" runat="server" ConnectionString="<%$ ConnectionStrings:DB9ConnectionString7 %>" SelectCommand="SELECT [CourseID] FROM [Course]"></asp:SqlDataSource>
+                        <asp:DropDownList ID="Course_ID" CssClass="form-control" runat="server" DataSourceID="SqlDataSource3" DataTextField="CourseID" DataValueField="CourseID" Width="145px"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DB9 %>" SelectCommand="SELECT [CourseID] FROM [Course]"></asp:SqlDataSource>
                 </div>
                 </div>
                  <div class="form-group">
@@ -117,7 +120,6 @@
                 </Columns>
 <PagerStyle CssClass="pgr"></PagerStyle>
             </asp:GridView>
-                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB9ConnectionString8 %>" SelectCommand="SELECT * FROM [StudentCourseFee]"></asp:SqlDataSource>
                  <style>
             .mGrid { 
                     width: 100%; 

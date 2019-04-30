@@ -53,7 +53,7 @@ namespace DB9_Institute_Management_System
                 }
                 else
                 {
-                    string CS = @"Data Source=DESKTOP-KM5HNLG;Initial Catalog=DB9;Integrated Security=True";
+                    string CS = @"Data Source=SONY\SQLEXPRESS;Initial Catalog=DB9;Integrated Security=True";
                     using (SqlConnection con = new SqlConnection(CS))
                     {
                         con.Open();

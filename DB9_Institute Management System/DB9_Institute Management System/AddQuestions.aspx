@@ -38,7 +38,7 @@
                         <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="Default.aspx">Home</a></li>
-                            <li class="active"><a href="Sign In.aspx">Sign In</a></li>
+                            <li><a href="Sign In.aspx">Signout</a></li>
                              <li class="active"><a href="InstructorViewCourses.aspx">InstructorViewCourses</a></li>
 
                         </ul>

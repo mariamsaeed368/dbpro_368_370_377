@@ -40,13 +40,13 @@ namespace DB9_Institute_Management_System {
         protected global::System.Web.UI.WebControls.DropDownList Register_No;
         
         /// <summary>
-        /// RegistrationNoDataSet control.
+        /// SqlDataSource2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource RegistrationNoDataSet;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
         
         /// <summary>
         /// CourseID control.
@@ -67,13 +67,13 @@ namespace DB9_Institute_Management_System {
         protected global::System.Web.UI.WebControls.DropDownList Course_ID;
         
         /// <summary>
-        /// CourseIDDataSet control.
+        /// SqlDataSource3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource CourseIDDataSet;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
         
         /// <summary>
         /// TotalFee control.
@@ -155,15 +155,6 @@ namespace DB9_Institute_Management_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
         /// lblError control.

@@ -12,7 +12,7 @@ namespace DB9_Institute_Management_System
     public partial class StudentViewOfCourses : System.Web.UI.Page
     {
         public static string sendtext = " ";
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-KM5HNLG;Initial Catalog=DB9;Integrated Security=True");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=SONY\SQLEXPRESS;Initial Catalog=DB9;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -35,7 +35,7 @@ namespace DB9_Institute_Management_System
         }
         protected void lnk_OnClick(object sender, EventArgs e)
         {
-            string CS = @"Data Source=DESKTOP-KM5HNLG;Initial Catalog=DB9;Integrated Security=True";
+            string CS = @"Data Source=SONY\SQLEXPRESS;Initial Catalog=DB9;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(CS))
             {
                 con.Open();

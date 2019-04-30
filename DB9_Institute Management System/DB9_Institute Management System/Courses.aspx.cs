@@ -11,7 +11,7 @@ namespace DB9_Institute_Management_System
 {
     public partial class Courses : System.Web.UI.Page
     {
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-KM5HNLG;Initial Catalog=DB9;Integrated Security=True");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=SONY\SQLEXPRESS;Initial Catalog=DB9;Integrated Security=True");
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -62,10 +62,20 @@ namespace DB9_Institute_Management_System
                     Label3.Text = " ";
                     Label4.Text = " ";
                     lblSuccessMessage.Text = "Added Successfully";
+                    FillGridView();
                 }
                 else
+                {
+                    SqlCommand cmd = new SqlCommand("UPDATE StudentCourseFee SET TotalFee='" + TxtFee.Text.Trim() + "' WHERE CourseID = '" + Convert.ToInt32(hfCourseID.Value) + "'", sqlCon);
+                    cmd.ExecuteNonQuery();
+                    SqlCommand cmd1 = new SqlCommand("UPDATE StudentCourse SET CourseName='" + txtCourseName.Text.Trim() + "' CourseDescription='" + txtDescription.Text.Trim() + "' WHERE CourseID = '" + Convert.ToInt32(hfCourseID.Value) + "'", sqlCon);
+                    cmd1.ExecuteNonQuery();
+                    SqlCommand cmd2 = new SqlCommand("UPDATE InstructorCourse SET CourseName='" + txtCourseName.Text.Trim() + "' CourseDescription='" + txtDescription.Text.Trim() + "' WHERE CourseID = '" + Convert.ToInt32(hfCourseID.Value) + "'", sqlCon);
+                    cmd2.ExecuteNonQuery();
                     lblSuccessMessage.Text = "Updated Succesfully";
-                FillGridView();
+                    FillGridView();
+                }
+                    
             }
             else
             {
@@ -77,6 +87,14 @@ namespace DB9_Institute_Management_System
         {
                if (sqlCon.State == ConnectionState.Closed)
                sqlCon.Open();
+               SqlCommand cmd = new SqlCommand("Delete From StudentCourseFee where CourseID='" + Convert.ToInt32(hfCourseID.Value) + "'", sqlCon);
+               cmd.ExecuteNonQuery();
+               SqlCommand cmd1 = new SqlCommand("Delete From StudentCourse where CourseID='" + Convert.ToInt32(hfCourseID.Value) + "'", sqlCon);
+               cmd1.ExecuteNonQuery();
+               SqlCommand cmd2 = new SqlCommand("Delete From InstructorCourse where CourseID='" + Convert.ToInt32(hfCourseID.Value) + "'", sqlCon);
+               cmd2.ExecuteNonQuery();
+               SqlCommand cmd3 = new SqlCommand("Delete From InstructorTest where CourseID='" + Convert.ToInt32(hfCourseID.Value) + "'", sqlCon);
+               cmd3.ExecuteNonQuery();
                SqlCommand sqlCmd = new SqlCommand("CourseDeleteById", sqlCon);
                sqlCmd.CommandType = CommandType.StoredProcedure;
                sqlCmd.Parameters.AddWithValue("@CourseID", Convert.ToInt32(hfCourseID.Value));
