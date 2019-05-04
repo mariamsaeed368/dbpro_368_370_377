@@ -12,7 +12,7 @@ namespace DB9_Institute_Management_System
 {
     public partial class InstructorCourse : System.Web.UI.Page
     {
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=SONY\SQLEXPRESS;Initial Catalog=DB9;Integrated Security=True");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-4NQFIN1\FATIMAKHALIL;Initial Catalog=DB9;Integrated Security=true");
 
         
 
@@ -109,8 +109,9 @@ namespace DB9_Institute_Management_System
                             sqlCmd.Parameters.AddWithValue("@InstructorCourseID", (hfInstructorId.Value == "" ? 0 : Convert.ToInt32(hfInstructorId.Value)));
                             sqlCmd.Parameters.AddWithValue("@InstructorID", Convert.ToInt32(Instructor_ID1.Text.Trim()));
                             sqlCmd.Parameters.AddWithValue("@CourseName", Course_ID1.Text.Trim());
+                        sqlCmd.Parameters.AddWithValue("@AssignedOn", Convert.ToDateTime(txtAssignedDate.Text.Trim()));
 
-                            sqlCmd.ExecuteNonQuery();
+                        sqlCmd.ExecuteNonQuery();
                             string instructorID = hfInstructorId.Value;
                             
 

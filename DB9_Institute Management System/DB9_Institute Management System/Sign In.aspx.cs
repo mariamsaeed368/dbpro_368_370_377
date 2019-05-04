@@ -31,7 +31,7 @@ namespace DB9_Institute_Management_System
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string CS = @"Data Source=SONY\SQLEXPRESS;Initial Catalog=DB9;Integrated Security=True";
+            string CS = @"Data Source=DESKTOP-4NQFIN1\FATIMAKHALIL;Initial Catalog=DB9;Integrated Security=true";
 
             if (dropRole.SelectedItem.Text == "Student")
             {

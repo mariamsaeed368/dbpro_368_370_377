@@ -11,7 +11,7 @@ namespace DB9_Institute_Management_System
     public partial class Test : System.Web.UI.Page
     {
         
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=SONY\SQLEXPRESS;Initial Catalog=DB9;Integrated Security=True");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-4NQFIN1\FATIMAKHALIL;Initial Catalog=DB9;Integrated Security=true");
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -63,6 +63,7 @@ namespace DB9_Institute_Management_System
                     sqlCmd.Parameters.AddWithValue("@Option3", txtOption3.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Option4", txtoption4.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@CorrectAnswer", txtCorrectAnswer.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@CreatedOn", Convert.ToDateTime(txtAssignedDate.Text));
                     sqlCmd.ExecuteNonQuery();
                     string QuestionID = hfQuestion.Value;
                     Clear();
@@ -107,7 +108,7 @@ namespace DB9_Institute_Management_System
                 catch (Exception ex)
                 {
 
-                   // lblError.Text = ex.Message;
+                    lblError.Text = ex.Message;
                 }
 
         }
@@ -117,8 +118,8 @@ namespace DB9_Institute_Management_System
             hfCourse.Value = InstructorViewCourses.sendtext3;
             hfInstructorId.Value = InstructorViewCourses.sendtext2;
             if (sqlCon.State == ConnectionState.Closed)
-               // try
-               // {
+                try
+                {
 
                     sqlCon.Open();
                     SqlDataAdapter sqlDa = new SqlDataAdapter("ViewQuestionByID", sqlCon);
@@ -138,15 +139,15 @@ namespace DB9_Institute_Management_System
                     txtOption3.Text = dtbl.Rows[0]["Option3"].ToString();
                     txtoption4.Text = dtbl.Rows[0]["Option4"].ToString();
                     txtCorrectAnswer.Text = dtbl.Rows[0]["CorrectAnswer"].ToString();
-
+                    txtAssignedDate.Text = dtbl.Rows[0]["CreatedOn"].ToString();
                     btnAdd.Text = "Update";
                     btnDelete.Enabled = true;
 
-               /* }
+                }
                 catch (Exception ex)
                 {
                     lblError.Text = ex.Message;
-                }*/
+                }
 
 
         }
@@ -155,8 +156,8 @@ namespace DB9_Institute_Management_System
         protected void btnDelete_Click(object sender, EventArgs e)
         {
             if (sqlCon.State == ConnectionState.Closed)
-                //  try
-                //  {
+                 try
+                  {
                 hfInstructorId.Value = InstructorViewCourses.sendtext1;
             sqlCon.Open();
                     SqlCommand sqlCmd1 = new SqlCommand("DeleteQuestionByID", sqlCon);
@@ -174,12 +175,13 @@ namespace DB9_Institute_Management_System
                     lblError.Text = "Deleted Successfully";
                     Clear();
 
-              /*  }
+              
+              }
                 catch (Exception ex)
                 {
                     lblError.Text = ex.Message;
                 }
-                */
+                
 
         }
 

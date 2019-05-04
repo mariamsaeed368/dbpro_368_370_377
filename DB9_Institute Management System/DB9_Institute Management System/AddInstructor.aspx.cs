@@ -12,7 +12,7 @@ namespace DB9_Institute_Management_System
     public partial class AddInstructor : System.Web.UI.Page
     {
         
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=SONY\SQLEXPRESS;Initial Catalog=DB9;Integrated Security=True");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-4NQFIN1\FATIMAKHALIL;Initial Catalog=DB9;Integrated Security=true");
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -63,7 +63,8 @@ namespace DB9_Institute_Management_System
                     sqlCmd.Parameters.AddWithValue("@Salary", Convert.ToDouble(txtSalary.Text.Trim()));
                     sqlCmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
-                    sqlCmd.ExecuteNonQuery();
+                            sqlCmd.Parameters.AddWithValue("@AssignedOn", Convert.ToDateTime(txtAssignedDate.Text.Trim()));
+                            sqlCmd.ExecuteNonQuery();
                     string instructorID = hfInstructorId.Value;
                     Clear();
 
@@ -93,7 +94,9 @@ namespace DB9_Institute_Management_System
                     sqlCmd1.Parameters.AddWithValue("@Salary", Convert.ToDouble(txtSalary.Text.Trim()));
                     sqlCmd1.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                     sqlCmd1.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
-                    sqlCmd1.ExecuteNonQuery();
+                    sqlCmd1.Parameters.AddWithValue("@AssignedOn", Convert.ToDateTime(txtAssignedDate.Text.Trim()));
+
+                            sqlCmd1.ExecuteNonQuery();
                     string instructorID = hfInstructorId.Value;
                   
 
@@ -167,6 +170,7 @@ namespace DB9_Institute_Management_System
                     txtSalary.Text = dtbl.Rows[0]["Salary"].ToString();
                     txtEmail.Text = dtbl.Rows[0]["Email"].ToString();
                     txtPassword.Text = dtbl.Rows[0]["Password"].ToString();
+                    txtPassword.Text = dtbl.Rows[0]["AssignedOn"].ToString();
                     btnAdd.Text = "Update";
                     btnDelete.Enabled = true;
                     

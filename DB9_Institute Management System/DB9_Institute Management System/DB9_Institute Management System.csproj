@@ -78,7 +78,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -141,6 +141,9 @@
     <Content Include="Reports.aspx" />
     <Content Include="Sign In.aspx" />
     <Content Include="SignUp.aspx" />
+    <Content Include="SpecificCourseInstructors.aspx" />
+    <Content Include="SpecificInstructorsReport.aspx" />
+    <Content Include="SpecificYearInstructors.aspx" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -160,7 +163,9 @@
     <Content Include="StudentViewOfCourses.aspx" />
     <Content Include="AddQuestions.aspx" />
     <Content Include="SubmittedDuesReport.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddInstructor.aspx.cs">
@@ -188,6 +193,11 @@
     </Compile>
     <Compile Include="Courses.aspx.designer.cs">
       <DependentUpon>Courses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DB9DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB9DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -251,6 +261,11 @@
     <Compile Include="InstructorViewCourses.aspx.designer.cs">
       <DependentUpon>InstructorViewCourses.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InstructorYear.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InstructorYear.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Instructor_Courses.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -294,6 +309,32 @@
     </Compile>
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SpecificCourse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecificCourse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SpecificCourseInstructors.aspx.cs">
+      <DependentUpon>SpecificCourseInstructors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpecificCourseInstructors.aspx.designer.cs">
+      <DependentUpon>SpecificCourseInstructors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SpecificInstructorsReport.aspx.cs">
+      <DependentUpon>SpecificInstructorsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpecificInstructorsReport.aspx.designer.cs">
+      <DependentUpon>SpecificInstructorsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SpecificYearInstructors.aspx.cs">
+      <DependentUpon>SpecificYearInstructors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpecificYearInstructors.aspx.designer.cs">
+      <DependentUpon>SpecificYearInstructors.aspx</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="StudentCourseFee.aspx.cs">
@@ -373,6 +414,17 @@
     <Content Include="Instructors.xsc">
       <DependentUpon>Instructors.xsd</DependentUpon>
     </Content>
+    <Content Include="DB9DataSet.xsc">
+      <DependentUpon>DB9DataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="DB9DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB9DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DB9DataSet.xss">
+      <DependentUpon>DB9DataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Instructors.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -391,6 +443,17 @@
     </Content>
     <Content Include="Instructor_Courses.xsc">
       <DependentUpon>Instructor_Courses.xsd</DependentUpon>
+    </Content>
+    <Content Include="InstructorYear.xsc">
+      <DependentUpon>InstructorYear.xsd</DependentUpon>
+    </Content>
+    <None Include="InstructorYear.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InstructorYear.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="InstructorYear.xss">
+      <DependentUpon>InstructorYear.xsd</DependentUpon>
     </Content>
     <None Include="Instructor_Courses.xsd">
       <SubType>Designer</SubType>
@@ -421,6 +484,17 @@
     </Content>
     <Content Include="StudentsEnrolled.xsc">
       <DependentUpon>StudentsEnrolled.xsd</DependentUpon>
+    </Content>
+    <Content Include="SpecificCourse.xsc">
+      <DependentUpon>SpecificCourse.xsd</DependentUpon>
+    </Content>
+    <None Include="SpecificCourse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SpecificCourse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="SpecificCourse.xss">
+      <DependentUpon>SpecificCourse.xsd</DependentUpon>
     </Content>
     <None Include="StudentsEnrolled.xsd">
       <SubType>Designer</SubType>
@@ -455,6 +529,9 @@
     <EmbeddedResource Include="InstructorTest.rdlc" />
     <EmbeddedResource Include="Instructor_Course.rdlc" />
     <EmbeddedResource Include="RegisteredStudent.rdlc" />
+    <EmbeddedResource Include="SpecificCourseInstructors.rdlc" />
+    <EmbeddedResource Include="SpecificDateInstructors.rdlc" />
+    <EmbeddedResource Include="SpecificYearInstructor.rdlc" />
     <EmbeddedResource Include="StudentsEnrolled.rdlc" />
     <EmbeddedResource Include="SubmittedDues.rdlc" />
   </ItemGroup>

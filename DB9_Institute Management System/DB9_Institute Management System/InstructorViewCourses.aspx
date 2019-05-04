@@ -73,7 +73,8 @@
                     <asp:BoundField DataField="CourseID" HeaderText="CourseID"/>
                     <asp:BoundField DataField="CourseName" HeaderText="CourseName"/>
                     <asp:BoundField DataField="CourseDescription" HeaderText="CourseDescription"/>
-                     
+                     <asp:BoundField DataField="AssignedOn" HeaderText="AssignedOn"/>
+
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:LinkButton ID="lnkAddQuestions" runat="server" CommandArgument='<%# Eval("InstructorCourseID")%>' OnClick="lnk_OnClick">Add Questions</asp:LinkButton>

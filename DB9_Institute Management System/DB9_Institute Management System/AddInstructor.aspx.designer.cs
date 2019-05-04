@@ -121,6 +121,24 @@ namespace DB9_Institute_Management_System {
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
+        /// AssignedDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AssignedDate;
+        
+        /// <summary>
+        /// txtAssignedDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAssignedDate;
+        
+        /// <summary>
         /// lblError control.
         /// </summary>
         /// <remarks>

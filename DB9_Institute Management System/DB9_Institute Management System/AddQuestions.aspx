@@ -100,6 +100,12 @@
                         <asp:TextBox ID="txtCorrectAnswer" CssClass="form-control" runat="server" placeholder="Correct Answer" Width="194px"></asp:TextBox>
                     </div>
                 </div>
+                <div class="form-group">
+                    <asp:Label ID="CreatedOn" runat="server" CssClass="col-md-2 control-label" Text="AssignedDate"></asp:Label>
+                    <div class="col-md-3">
+                        <asp:TextBox  ID="txtAssignedDate" runat="server" Class="form-control" placeholder="Date"  ></asp:TextBox>
+                    </div>
+                </div>
                  <div class="form-group">
                     <div class="col-md-2"></div>
                     <div class="col-md-6">
@@ -124,7 +130,8 @@
                       <asp:BoundField DataField="Option3" HeaderText="Option3"/>
                       <asp:BoundField DataField="Option4" HeaderText="Option4"/>
                        <asp:BoundField DataField="CorrectAnswer" HeaderText="CorrectAnswer"/>
-                    
+                    <asp:BoundField DataField="CreatedOn" HeaderText="CreatedOn"/>
+
                      
                        
                           <asp:TemplateField>

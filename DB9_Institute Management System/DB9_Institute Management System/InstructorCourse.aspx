@@ -74,10 +74,16 @@
                         <asp:DropDownList ID="Course_ID1" CssClass="form-control" runat="server" Width="194px"  ></asp:DropDownList>
 
                 </div>
+                </div>  
+        <div class="form-group">
+                    <asp:Label ID="AssignedDate" runat="server" CssClass="col-md-2 control-label" Text="AssignedOn"></asp:Label>
+                    <div class="col-md-3">
+                        <asp:TextBox  ID="txtAssignedDate" runat="server" Class="form-control" placeholder="Date"  ></asp:TextBox>
+                    </div>
                 </div>
-                 
+                </div>
+             </div>
         
-        </div>
                
                  <div class="form-group">
                     <div class="col-md-2"></div>
@@ -99,8 +105,10 @@
                     <asp:BoundField DataField="CourseID" HeaderText="CourseID"/>
                     <asp:BoundField DataField="CourseName" HeaderText="CourseName"/>
                     <asp:BoundField DataField="CourseDescription" HeaderText="CourseDescription"/>
+
                     
-                    
+                    <asp:BoundField DataField="AssignedOn" HeaderText="AssignedOn"/>
+
                        
                           <asp:TemplateField>
                         <ItemTemplate>

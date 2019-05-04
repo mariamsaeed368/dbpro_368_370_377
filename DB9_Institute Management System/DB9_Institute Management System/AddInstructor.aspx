@@ -91,6 +91,12 @@
                         <asp:TextBox pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" ID="txtPassword" runat="server" Class="form-control" placeholder="Password" TextMode="Password" ></asp:TextBox>
                     </div>
                 </div>
+                 <div class="form-group">
+                    <asp:Label ID="AssignedDate" runat="server" CssClass="col-md-2 control-label" Text="AssignedDate"></asp:Label>
+                    <div class="col-md-3">
+                        <asp:TextBox  ID="txtAssignedDate" runat="server" Class="form-control" placeholder="Date"  ></asp:TextBox>
+                    </div>
+                </div>
                
               <div class="form-group">
                     <div class="col-md-2"></div>
@@ -120,6 +126,8 @@
                     <asp:BoundField DataField="Salary" HeaderText="Salary"/>
                     <asp:BoundField DataField="Email" HeaderText="Email"/>
                      <asp:BoundField DataField="Password" HeaderText="Password"/>
+                     <asp:BoundField DataField="AssignedOn" HeaderText="AssignedOn"/>
+
                     <asp:TemplateField>
                         
                         
